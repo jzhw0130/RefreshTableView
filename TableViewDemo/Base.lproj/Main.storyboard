@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,13 +36,41 @@
                                     <segue destination="Pu2-PK-k56" kind="show" id="l4H-51-3g4"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VSM" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-SD-5mB">
+                                <rect key="frame" x="16" y="521" width="67.5" height="126.5"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUz-gr-YCe">
+                                <rect key="frame" x="93.5" y="520.5" width="187.5" height="126.5"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Knt-eg-hCG">
+                                    <rect key="frame" x="0.0" y="0.0" width="188" height="127"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.47843137250000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ng6-Yt-ahf">
+                                <rect key="frame" x="291" y="520.5" width="216" height="126.5"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.47843137250000001" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ng6-Yt-ahf" secondAttribute="trailing" constant="-148" id="0gl-Bh-Sya"/>
+                            <constraint firstItem="ng6-Yt-ahf" firstAttribute="leading" secondItem="VUz-gr-YCe" secondAttribute="trailing" constant="10" id="14N-eQ-W4w"/>
+                            <constraint firstItem="VUz-gr-YCe" firstAttribute="centerX" secondItem="NdH-wz-DPl" secondAttribute="centerX" id="26u-Vv-4jA"/>
+                            <constraint firstItem="ng6-Yt-ahf" firstAttribute="centerY" secondItem="VUz-gr-YCe" secondAttribute="centerY" id="43F-Ex-eeM"/>
                             <constraint firstItem="NdH-wz-DPl" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="9ES-MX-Sgi"/>
+                            <constraint firstItem="VUz-gr-YCe" firstAttribute="width" secondItem="NdH-wz-DPl" secondAttribute="width" id="GNL-oQ-6Fx"/>
+                            <constraint firstItem="5Pa-SD-5mB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Hjv-wC-qoO"/>
                             <constraint firstItem="NdH-wz-DPl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Kbb-OB-2nq"/>
+                            <constraint firstItem="5Pa-SD-5mB" firstAttribute="trailing" secondItem="VUz-gr-YCe" secondAttribute="leading" constant="-10" id="QZm-4r-ep9"/>
+                            <constraint firstItem="ng6-Yt-ahf" firstAttribute="height" secondItem="VUz-gr-YCe" secondAttribute="height" id="TyU-RK-5KT"/>
+                            <constraint firstItem="VUz-gr-YCe" firstAttribute="top" secondItem="NdH-wz-DPl" secondAttribute="bottom" constant="20" id="Uzz-BB-GXe"/>
+                            <constraint firstItem="5Pa-SD-5mB" firstAttribute="height" secondItem="VUz-gr-YCe" secondAttribute="height" id="fPC-YE-nWQ"/>
                             <constraint firstItem="NdH-wz-DPl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gLt-qc-n1R"/>
+                            <constraint firstItem="5Pa-SD-5mB" firstAttribute="centerY" secondItem="VUz-gr-YCe" secondAttribute="centerY" id="i61-lE-Jjm"/>
+                            <constraint firstItem="VUz-gr-YCe" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-20" id="je6-bT-ir0"/>
                             <constraint firstItem="NdH-wz-DPl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tq5-Qk-vk0"/>
                         </constraints>
                         <connections>
@@ -50,6 +79,10 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="che-GJ-Lg2"/>
+                    <connections>
+                        <outlet property="imageView" destination="5Pa-SD-5mB" id="Xw5-1U-B2E"/>
+                        <outlet property="visualEffectView" destination="VUz-gr-YCe" id="RcU-Id-Ea5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="hde-jd-oWj">
@@ -128,4 +161,7 @@
             <point key="canvasLocation" x="578" y="1176"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="VSM" width="200" height="200"/>
+    </resources>
 </document>
